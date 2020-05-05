@@ -3,7 +3,7 @@ syntax = "proto3";
 package pcbook;
 
 //option go_package = "github.com/Javlopez/pcbook";
-option go_package = "./pb";
+option go_package = "../pb";
 
 
 message Memory {

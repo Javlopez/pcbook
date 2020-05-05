@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package pcbook;
 
-option go_package = "./pb";
+option go_package = "../pb";
 
 import "processor_message.proto";
 import "memory_message.proto";
@@ -21,6 +21,7 @@ message Laptop {
     repeated Storage storages = 7;
     Screen screen = 8;
     Keyboard keyboard = 9;
+    
     oneof weight {
         double weight_kg = 10;
         double weight_lb = 11;
