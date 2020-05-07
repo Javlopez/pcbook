@@ -6,7 +6,6 @@ import (
 	"errors"
 	"io"
 	"log"
-	"time"
 
 	"github.com/Javlopez/pcbook/pb"
 	"github.com/google/uuid"
@@ -144,7 +143,7 @@ func (server *LaptopServer) UploadImage(stream pb.LaptopService_UploadImageServe
 			return logError(status.Errorf(codes.InvalidArgument, "image is too large: %d > %d", imageSize, maxImageSize))
 		}
 		// write slowly
-		time.Sleep(time.Second)
+		//time.Sleep(time.Second)
 		_, err = imageData.Write(chunk)
 		if err != nil {
 			return logError(status.Errorf(codes.Internal, "cannot write chunk data: %v", err))
