@@ -71,7 +71,7 @@ func TestServerCreateLaptop(t *testing.T) {
 			//laptopStore := service.NewInMemoryLaptopStore()
 			imageStore := service.NewDiskImageStore(testImageFolder)
 
-			server := service.NewLaptopServer(tc.store, imageStore)
+			server := service.NewLaptopServer(tc.store, imageStore, nil)
 			res, err := server.CreateLaptop(context.Background(), req)
 
 			if tc.code == codes.OK {
